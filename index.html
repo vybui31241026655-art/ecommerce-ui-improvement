@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bộ Sưu Tập Túi Xách Nữ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Hoa trang trí nằm dưới nội dung và không nhận thao tác chuột -->
+  <div class="falling-flowers" aria-hidden="true">
+    <span class="falling-flower" style="--flower-left: 4%; --flower-size: 1.1rem; --fall-duration: 13s; --fall-delay: -2s;">🌸</span>
+    <span class="falling-flower" style="--flower-left: 12%; --flower-size: 0.9rem; --fall-duration: 16s; --fall-delay: -9s;">🌸</span>
+    <span class="falling-flower" style="--flower-left: 21%; --flower-size: 1.25rem; --fall-duration: 14s; --fall-delay: -5s;">🌸</span>
+    <span class="falling-flower" style="--flower-left: 30%; --flower-size: 0.85rem; --fall-duration: 18s; --fall-delay: -12s;">🌸</span>
+    <span class="falling-flower" style="--flower-left: 39%; --flower-size: 1.05rem; --fall-duration: 15s; --fall-delay: -7s;">🌸</span>
+    <span class="falling-flower" style="--flower-left: 48%; --flower-size: 0.95rem; --fall-duration: 17s; --fall-delay: -3s;">🌸</span>
+    <span class="falling-flower" style="--flower-left: 57%; --flower-size: 1.2rem; --fall-duration: 14s; --fall-delay: -10s;">🌸</span>
+    <span class="falling-flower" style="--flower-left: 66%; --flower-size: 0.8rem; --fall-duration: 19s; --fall-delay: -6s;">🌸</span>
+    <span class="falling-flower" style="--flower-left: 75%; --flower-size: 1.1rem; --fall-duration: 16s; --fall-delay: -13s;">🌸</span>
+    <span class="falling-flower" style="--flower-left: 84%; --flower-size: 0.9rem; --fall-duration: 15s; --fall-delay: -4s;">🌸</span>
+    <span class="falling-flower" style="--flower-left: 93%; --flower-size: 1.2rem; --fall-duration: 18s; --fall-delay: -8s;">🌸</span>
+    <span class="falling-flower" style="--flower-left: 7%; --flower-size: 0.8rem; --fall-duration: 20s; --fall-delay: -15s;">🌸</span>
+  </div>
+
+  <!-- Header Tiêu đề khu vực -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-title">Bộ Sưu Tập Túi Xách Nữ</h1>
+      <p class="page-subtitle">Thiết kế tinh tế, hiện đại & phù hợp cho mọi dịp</p>
+    </div>
+  </header>
+
+  <!-- Khu vực danh sách sản phẩm -->
+  <main class="product-section">
+    <div class="container">
+      <div class="product-grid">
+
+        <!-- Sản phẩm 1: Có giảm giá -->
+        <article class="product-card">
+          <div class="product-card__media">
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600&auto=format&fit=crop" alt="Túi Xách Tay Mini Dáng Hộp Lock Chic Size 19" loading="lazy">
+            </a>
+            <span class="product-card__badge product-card__badge--discount">-7%</span>
+          </div>
+
+          <div class="product-card__content">
+            <!-- Bộ chọn màu sắc (Color Swatches) -->
+            <div class="color-swatches" aria-label="Các màu sắc khả dụng">
+              <span class="swatch swatch--active" style="background-color: #c4a482;" title="Nâu Caramel"></span>
+              <span class="swatch" style="background-color: #a2b9bc;" title="Xanh Mint"></span>
+              <span class="swatch" style="background-color: #1f3a52;" title="Jean"></span>
+              <span class="swatch" style="background-color: #f5f5dc;" title="Kem"></span>
+            </div>
+
+            <h3 class="product-card__title">
+              <a href="#">Túi Xách Tay Mini Dáng Hộp Lock Chic Size 19</a>
+            </h3>
+
+            <!-- Khối giá cố định chiều cao -->
+            <div class="product-card__price-group">
+              <ins class="price-current">1.100.000₫</ins>
+              <del class="price-old">1.183.000₫</del>
+            </div>
+
+            <!-- Nút mua hàng -->
+            <button class="btn-add-to-cart" type="button">
+              <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span>Thêm vào giỏ</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Sản phẩm 2: Không giảm giá (Giá niêm yết) -->
+        <article class="product-card">
+          <div class="product-card__media">
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop" alt="Túi Xách Tay Peony Size 21" loading="lazy">
+            </a>
+            <span class="product-card__badge product-card__badge--new">Mới</span>
+          </div>
+
+          <div class="product-card__content">
+            <div class="color-swatches" aria-label="Các màu sắc khả dụng">
+              <span class="swatch swatch--active" style="background-color: #f5f5dc;" title="Kem"></span>
+              <span class="swatch" style="background-color: #ffb6c1;" title="Hồng"></span>
+            </div>
+
+            <h3 class="product-card__title">
+              <a href="#">Túi Xách Tay Peony Size 21</a>
+            </h3>
+
+            <div class="product-card__price-group">
+              <ins class="price-current">1.283.000₫</ins>
+            </div>
+
+            <button class="btn-add-to-cart" type="button">
+              <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span>Thêm vào giỏ</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Sản phẩm 3: Có giảm giá -->
+        <article class="product-card">
+          <div class="product-card__media">
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?q=80&w=600&auto=format&fit=crop" alt="Túi Đeo Vai Hobo Đáy Vuông Love Charm Size 23" loading="lazy">
+            </a>
+            <span class="product-card__badge product-card__badge--discount">-7%</span>
+          </div>
+
+          <div class="product-card__content">
+            <div class="color-swatches" aria-label="Các màu sắc khả dụng">
+              <span class="swatch swatch--active" style="background-color: #1f3a52;" title="Jean"></span>
+              <span class="swatch" style="background-color: #f5f5dc;" title="Kem"></span>
+              <span class="swatch" style="background-color: #111111;" title="Đen"></span>
+            </div>
+
+            <h3 class="product-card__title">
+              <a href="#">Túi Đeo Vai Hobo Đáy Vuông Love Charm Size 23</a>
+            </h3>
+
+            <div class="product-card__price-group">
+              <ins class="price-current">1.100.000₫</ins>
+              <del class="price-old">1.183.000₫</del>
+            </div>
+
+            <button class="btn-add-to-cart" type="button">
+              <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span>Thêm vào giỏ</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Sản phẩm 4: Không giảm giá -->
+        <article class="product-card">
+          <div class="product-card__media">
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=600&auto=format&fit=crop" alt="Túi Xách Tay Flora Size 20" loading="lazy">
+            </a>
+          </div>
+
+          <div class="product-card__content">
+            <div class="color-swatches" aria-label="Các màu sắc khả dụng">
+              <span class="swatch swatch--active" style="background-color: #f5f5dc;" title="Kem"></span>
+            </div>
+
+            <h3 class="product-card__title">
+              <a href="#">Túi Xách Tay Flora Size 20 - Thiết kế công sở thanh lịch</a>
+            </h3>
+
+            <div class="product-card__price-group">
+              <ins class="price-current">1.283.000₫</ins>
+            </div>
+
+            <button class="btn-add-to-cart" type="button">
+              <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span>Thêm vào giỏ</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

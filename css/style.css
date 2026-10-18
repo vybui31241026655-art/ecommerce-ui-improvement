@@ -1,0 +1,363 @@
+/* 1. Reset, theme colors, and system typography */
+:root {
+  color-scheme: light;
+  --color-primary: #9f3159;
+  --color-accent: #c43d70;
+  --color-text: #49383d;
+  --color-text-muted: #89777c;
+  --color-bg: #fff8f7;
+  --color-border: #f5e4e7;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --card-radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  padding-bottom: 56px;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(255, 225, 231, 0.72), transparent 36rem),
+    var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  line-height: 1.5;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 36px, 1200px);
+  margin: 0 auto;
+}
+
+/* 2. Decorative falling flowers */
+.falling-flowers {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.falling-flower {
+  position: absolute;
+  top: -2.5rem;
+  left: var(--flower-left);
+  font-size: var(--flower-size);
+  line-height: 1;
+  opacity: 0.68;
+  animation: flower-fall var(--fall-duration) linear var(--fall-delay) infinite;
+  will-change: transform;
+}
+
+@keyframes flower-fall {
+  0% {
+    transform: translate3d(0, -5vh, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(22px, 52vh, 0) rotate(180deg);
+  }
+
+  100% {
+    transform: translate3d(-12px, 108vh, 0) rotate(360deg);
+  }
+}
+
+/* 3. Collection heading */
+.page-header {
+  padding: clamp(44px, 8vw, 82px) 0 38px;
+  text-align: center;
+}
+
+.page-title {
+  display: inline-block;
+  color: var(--color-primary);
+  font-size: clamp(2rem, 5vw, 3.35rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.15;
+}
+
+.page-title::after {
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin: 16px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f4a9b8, #e77b9d);
+  content: "";
+}
+
+.page-subtitle {
+  margin-top: 14px;
+  color: #725e64;
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
+}
+
+/* 4. Responsive product grid: two columns on phones, three on tablets, four on desktop */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+@media (max-width: 1023px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 639px) {
+  .container {
+    width: min(100% - 24px, 480px);
+  }
+
+  .page-header {
+    padding: 42px 0 30px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 12px;
+  }
+}
+
+/* 5. Product card, image frame, and floating labels */
+.product-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(235, 203, 211, 0.75);
+  border-radius: var(--card-radius);
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(130, 67, 86, 0.08);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(130, 67, 86, 0.16);
+}
+
+.product-card__media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #f7e9e8;
+}
+
+.product-card__media > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.product-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease;
+}
+
+.product-card:hover .product-card__media img {
+  transform: scale(1.04);
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 11px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 750;
+  box-shadow: 0 3px 10px rgba(81, 31, 50, 0.16);
+}
+
+.product-card__badge--discount {
+  background: #c43d70;
+}
+
+.product-card__badge--new {
+  background: #a55372;
+}
+
+/* 6. Product details, color swatches, and two-line title */
+.product-card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.color-swatches {
+  display: flex;
+  height: 16px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.swatch {
+  width: 13px;
+  height: 13px;
+  border: 1px solid rgba(73, 56, 61, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.swatch:hover,
+.swatch--active {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #d98aa2;
+}
+
+.product-card__title {
+  display: -webkit-box;
+  min-height: 2.7em;
+  overflow: hidden;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.product-card__title a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.product-card__title a:hover {
+  color: var(--color-accent);
+}
+
+/* 7. Prominent selling price and muted original price */
+.product-card__price-group {
+  display: flex;
+  min-height: 40px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 3px 8px;
+  margin-top: auto;
+  margin-bottom: 12px;
+}
+
+.price-current {
+  color: var(--color-accent);
+  font-size: clamp(0.98rem, 1.7vw, 1.2rem);
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.price-old {
+  color: #a6979b;
+  font-size: 0.78rem;
+  text-decoration: line-through;
+  white-space: nowrap;
+}
+
+/* 8. Large, touch-friendly add-to-cart button */
+.btn-add-to-cart {
+  display: flex;
+  width: 100%;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d95783, #bd3d70);
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.btn-add-to-cart:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #c94775, #a92f60);
+  box-shadow: 0 7px 16px rgba(189, 61, 112, 0.28);
+}
+
+.btn-add-to-cart:active {
+  transform: translateY(0);
+}
+
+.btn-add-to-cart:focus-visible,
+.product-card__title a:focus-visible {
+  outline: 3px solid #e99bb1;
+  outline-offset: 3px;
+}
+
+/* 9. Compact card spacing on small phones */
+@media (max-width: 380px) {
+  .product-card {
+    border-radius: 17px;
+  }
+
+  .product-card__content {
+    padding: 12px 10px;
+  }
+
+  .product-card__title {
+    font-size: 0.86rem;
+  }
+
+  .product-card__badge {
+    top: 8px;
+    left: 8px;
+    min-height: 27px;
+    padding: 4px 9px;
+    font-size: 0.7rem;
+  }
+
+  .btn-add-to-cart {
+    gap: 5px;
+    padding: 9px 7px;
+    font-size: 0.78rem;
+  }
+
+  .btn-add-to-cart .cart-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* 10. Respect the visitor's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .falling-flowers {
+    display: none;
+  }
+}
