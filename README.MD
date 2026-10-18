@@ -1,36 +1,34 @@
-HAPAS Product Card Demo — HTML5 & CSS3
-=======================================
+# E-commerce UI Improvement
 
-Cấu trúc
---------
-- index.html  : cấu trúc trang và 4 sản phẩm mẫu
-- styles.css  : toàn bộ kiểu dáng và responsive
-- README.txt : hướng dẫn này
+## 1. Giới thiệu
+Bài tập cá nhân Chương 1 môn Phát triển ứng dụng WEB/TMĐT. Khảo sát website túi xách nữ Hapas và thiết kế lại khu vực thẻ sản phẩm (hiển thị giá bán, giá gốc, tỷ lệ giảm giá) bằng HTML5 và CSS3.
 
-Cách chạy
----------
-1. Giải nén file ZIP.
-2. Mở thư mục hapas-product-card-demo.
-3. Nhấp đúp index.html để mở bằng trình duyệt (Chrome, Edge, Firefox).
-4. Cần kết nối Internet để tải ảnh sản phẩm từ images.unsplash.com. Trang không dùng backend hay cơ sở dữ liệu.
+## 2. Website tham khảo
+- Tên website: Hapas
+- URL: https://hapas.vn/
+- Khu vực đã khảo sát: Trang chủ, Danh mục sản phẩm, Chi tiết sản phẩm, Tìm kiếm, Giỏ hàng
 
-Tương tác demo
---------------
-Nút “Thêm vào giỏ hàng” cập nhật số đếm trên đầu trang và tạm đổi nhãn thành “Đã thêm”.
-Đây chỉ là tương tác JavaScript phía trình duyệt; dữ liệu không được lưu và sẽ trở về 0 khi tải lại.
+## 3. Chức năng
+- Hiển thị danh sách sản phẩm.
+- Hiển thị tên, giá bán, giá gốc và tỷ lệ giảm giá của sản phẩm.
+- Bố cục hỗ trợ nhiều kích thước màn hình (điện thoại, máy tính bảng, máy tính).
+- Hiệu ứng hoa rơi bằng CSS
 
-Điểm cần kiểm tra
------------------
-- Desktop: khoảng 1280px và 1440px; lưới thường hiển thị 4 cột.
-- Tablet: khoảng 768px–1024px; lưới hiển thị 3 cột (tùy chiều rộng).
-- Mobile: 360px, 390px và 430px; lưới hiển thị 2 cột.
-- Tên dài không làm lệch bố cục; giá và nút không tràn ra ngoài thẻ.
-- Sản phẩm giảm giá có giá gốc gạch ngang và nhãn phần trăm; sản phẩm giá thường không hiển thị giá gốc/nhãn giảm.
-- Bấm từng nút để kiểm tra số đếm và phản hồi.
-- Dùng phím Tab để kiểm tra focus của liên kết và nút.
-- Kiểm tra ảnh khi có và không có Internet; URL ảnh hiện là ảnh từ xa.
-- Giá, tên, hình ảnh và nhãn khuyến mại là dữ liệu minh họa, không phải thông tin bán hàng thực tế của HAPAS.
+## 4. Công nghệ
+- HTML5
+- CSS3
 
-Lưu ý
------
-Đây là bản demo giao diện. Liên kết chi tiết sản phẩm đang là liên kết minh họa (#...), và nút giỏ hàng không tạo đơn hàng thật.
+## 5. Cách chạy
+Mở file index.html bằng trình duyệt.
+Bản chạy trực tiếp: https://vybui31241026655-art.github.io/ecommerce-ui-improvement/
+
+## 6. Cải tiến đã thực hiện
+**Vấn đề ban đầu:** [Trên website Hapas.vn, danh sách sản phẩm túi xách hiển thị giá theo hai kiểu khác nhau: sản phẩm giảm giá có giá bán chữ đỏ, giá gốc gạch ngang và nhãn “Giảm X%”, còn sản phẩm không giảm giá chỉ có một mức giá. Cách trình bày này khiến các thẻ trong cùng một hàng có lượng thông tin không đồng đều, và khách hàng khó so sánh nhanh giá giữa các sản phẩm. Ngoài ra, tên sản phẩm khá dài (ví dụ “Túi Xách Tay Mini Dáng Hộp Lock Chic Size 19 - Nâu Caramel”) và mỗi màu của cùng một mẫu túi lại là một thẻ riêng, nên danh sách dễ bị lặp và khó quét mắt. Tôi sẽ thiết kế lại thẻ sản phẩm để giá bán, giá gốc và tỷ lệ giảm giá được trình bày nhất quán, rõ ràng, tên sản phẩm gọn gàng, nút thêm vào giỏ hàng dễ nhìn và dễ bấm, đồng thời bố cục hiển thị tốt trên cả máy tính và đảm bảo bố cục tốt trên điện thoại.
+]
+
+**Thay đổi đã thực hiện:** [Thẻ sản phẩm hiển thị rõ giá bán, giá gốc gạch ngang và nhãn giảm giá; tên sản phẩm giới hạn 2 dòng; nút thêm vào giỏ lớn dễ bấm; bố cục 2/3/4 cột theo màn hình.]
+
+## 7. Hỗ trợ từ AI
+AI hỗ trợ: [phân tích website, đề xuất phương án giao diện, tạo mã HTML/CSS ban đầu].
+Phần tôi đã kiểm tra, điều chỉnh: [đối chiếu kết quả AI với website thực tế, loại bỏ nhận xét sai, kiểm tra giao diện ở nhiều kích thước màn hình, thay ảnh, tự chỉnh ...]
+Chi tiết xem file AI_USAGE.md.
