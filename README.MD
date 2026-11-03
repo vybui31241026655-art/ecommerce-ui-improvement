@@ -1,34 +1,54 @@
-# E-commerce UI Improvement
+# E-commerce UI Improvement – Buổi 2
 
-## 1. Giới thiệu
-Bài tập cá nhân Chương 1 môn Phát triển ứng dụng WEB/TMĐT. Khảo sát website túi xách nữ Hapas và thiết kế lại khu vực thẻ sản phẩm (hiển thị giá bán, giá gốc, tỷ lệ giảm giá) bằng HTML5 và CSS3.
+## 1. Giới thiệu bài tập
 
-## 2. Website tham khảo
-- Tên website: Hapas
-- URL: https://hapas.vn/
-- Khu vực đã khảo sát: Trang chủ, Danh mục sản phẩm, Chi tiết sản phẩm, Tìm kiếm, Giỏ hàng
+Bài tập cá nhân Buổi 2 thuộc học phần Phát triển ứng dụng thương mại điện tử, tiếp tục phát triển website giới thiệu sản phẩm túi xách nữ đã thực hiện ở Buổi 1.
 
-## 3. Chức năng
-- Hiển thị danh sách sản phẩm.
-- Hiển thị tên, giá bán, giá gốc và tỷ lệ giảm giá của sản phẩm.
-- Bố cục hỗ trợ nhiều kích thước màn hình (điện thoại, máy tính bảng, máy tính).
-- Hiệu ứng hoa rơi bằng CSS
+Mục tiêu là cải thiện cấu trúc HTML, cách tổ chức giao diện và khả năng hiển thị của website bằng HTML5 và CSS3.
 
-## 4. Công nghệ
-- HTML5
-- CSS3
+## 2. Website tham khảo và khu vực cải tiến
 
-## 5. Cách chạy
-Mở file index.html bằng trình duyệt.
-Bản chạy trực tiếp: https://vybui31241026655-art.github.io/ecommerce-ui-improvement/
+- **Website tham khảo:** HAPAS
+- **Đường dẫn:** https://hapas.vn/
+- **Khu vực cải tiến:** Danh sách sản phẩm túi xách nữ.
+- **Nội dung thực hiện:** Cải thiện cấu trúc thẻ sản phẩm, cách trình bày thông tin và bố cục giao diện.
 
-## 6. Cải tiến đã thực hiện
-**Vấn đề ban đầu:** [Trên website Hapas.vn, danh sách sản phẩm túi xách hiển thị giá theo hai kiểu khác nhau: sản phẩm giảm giá có giá bán chữ đỏ, giá gốc gạch ngang và nhãn “Giảm X%”, còn sản phẩm không giảm giá chỉ có một mức giá. Cách trình bày này khiến các thẻ trong cùng một hàng có lượng thông tin không đồng đều, và khách hàng khó so sánh nhanh giá giữa các sản phẩm. Ngoài ra, tên sản phẩm khá dài (ví dụ “Túi Xách Tay Mini Dáng Hộp Lock Chic Size 19 - Nâu Caramel”) và mỗi màu của cùng một mẫu túi lại là một thẻ riêng, nên danh sách dễ bị lặp và khó quét mắt. Tôi sẽ thiết kế lại thẻ sản phẩm để giá bán, giá gốc và tỷ lệ giảm giá được trình bày nhất quán, rõ ràng, tên sản phẩm gọn gàng, nút thêm vào giỏ hàng dễ nhìn và dễ bấm, đồng thời bố cục hiển thị tốt trên cả máy tính và đảm bảo bố cục tốt trên điện thoại.
-]
+## 3. Kỹ thuật HTML5/CSS3 đã thực hành
 
-**Thay đổi đã thực hiện:** [Thẻ sản phẩm hiển thị rõ giá bán, giá gốc gạch ngang và nhãn giảm giá; tên sản phẩm giới hạn 2 dòng; nút thêm vào giỏ lớn dễ bấm; bố cục 2/3/4 cột theo màn hình.]
+- **HTML5:** Sử dụng các phần tử có ý nghĩa như `header`, `main`, `article`, `section`, `img`, `a`, `button`.
+- **CSS Selector:** Sử dụng các bộ chọn để định dạng từng thành phần giao diện.
+- **Box Model:** Thực hành `margin`, `padding`, `border` để kiểm soát khoảng cách và kích thước phần tử.
+- **Flexbox:** Sắp xếp và căn chỉnh các thành phần bên trong thẻ sản phẩm.
+- **CSS Grid:** Tổ chức danh sách sản phẩm theo dạng lưới.
+- **Responsive Design:** Sử dụng Media Query để điều chỉnh giao diện theo kích thước màn hình.
 
-## 7. Hỗ trợ từ AI
-AI hỗ trợ: [phân tích website, đề xuất phương án giao diện, tạo mã HTML/CSS ban đầu].
-Phần tôi đã kiểm tra, điều chỉnh: [đối chiếu kết quả AI với website thực tế, loại bỏ nhận xét sai, kiểm tra giao diện ở nhiều kích thước màn hình, thay ảnh, tự chỉnh ...]
-Chi tiết xem file AI_USAGE.md.
+## 4. Hướng dẫn chạy website
+
+1. Truy cập repository GitHub và tải mã nguồn về máy tính.
+2. Giải nén thư mục dự án (nếu tải dưới dạng ZIP).
+3. Mở file `index.html` bằng trình duyệt Google Chrome.
+4. Kiểm tra giao diện trên máy tính và điện thoại thông qua chế độ Responsive của trình duyệt.
+
+## 5. Những thay đổi đã thực hiện
+
+- Cập nhật cấu trúc HTML5 cho khu vực hiển thị sản phẩm.
+- Điều chỉnh CSS nhằm cải thiện cách trình bày thẻ sản phẩm.
+- Thực hành Box Model để kiểm soát khoảng cách giữa các thành phần.
+- Sử dụng Flexbox và CSS Grid để tổ chức bố cục.
+- Điều chỉnh giao diện responsive nhằm giúp sản phẩm hiển thị phù hợp trên các kích thước màn hình khác nhau.
+
+## 6. Công cụ AI và cách kiểm tra kết quả
+
+- **Công cụ AI đã sử dụng:** [Điền tên công cụ AI thực tế].
+- **Mục đích:** Tham khảo cách tổ chức HTML, giải thích thuộc tính CSS và đề xuất hướng cải thiện giao diện.
+- **Cách kiểm tra:** Đối chiếu đề xuất của AI với mã nguồn, chạy website trên trình duyệt và kiểm tra giao diện ở các kích thước màn hình khác nhau.
+- **Điều chỉnh của bản thân:** [Ghi một đề xuất AI em đã kiểm tra, điều chỉnh hoặc không áp dụng và lý do].
+
+Chi tiết các prompt đã sử dụng được trình bày trong file `AI_USAGE.md`.
+
+---
+
+**Học phần:** Phát triển ứng dụng thương mại điện tử  
+**Giảng viên:** TS Nguyễn Mạnh Tuấn – tuannm@ueh.edu.vn
+
+**GitHub Repository:** https://github.com/vybui31241026655-art/ecommerce-ui-improvement
