@@ -17,6 +17,10 @@
   padding: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 body {
   min-height: 100vh;
   padding-bottom: 56px;
@@ -101,12 +105,34 @@ body {
 }
 
 /* 4. Responsive product grid: two columns on phones, three on tablets, four on desktop */
+
+/* THỰC HÀNH CSS GRID */
+
+/* Bố trí danh sách sản phẩm thành 2 cột */
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: stretch;
-  gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
 }
+
+/* Bỏ margin cũ để khoảng cách do gap kiểm soát */
+.product-card {
+    margin: 0;
+}
+
+/* Giữ tỷ lệ khung hình sản phẩm 4:5 */
+.product-card__media {
+    aspect-ratio: 4 / 5;
+}
+
+/* Hình ảnh không bị méo */
+.product-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 @media (max-width: 1023px) {
   .product-grid {
@@ -115,7 +141,7 @@ body {
   }
 }
 
-@media (max-width: 639px) {
+@media (max-width: 480px) {
   .container {
     width: min(100% - 24px, 480px);
   }
@@ -125,8 +151,8 @@ body {
   }
 
   .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px 12px;
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
 
@@ -361,3 +387,163 @@ body {
     display: none;
   }
 }
+
+
+/* =================================
+   1. ELEMENT SELECTOR
+================================= */
+
+/* Áp dụng cho toàn bộ hình ảnh */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =================================
+   2. BOX MODEL
+================================= */
+
+/* Khung chứa từng sản phẩm */
+.product-card {
+    box-sizing: border-box;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+/* =================================
+   3. DESCENDANT SELECTOR
+================================= */
+
+/* Hình ảnh bên trong thẻ sản phẩm */
+.product-card .product-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Nội dung bên trong thẻ sản phẩm */
+.product-card .product-card__content {
+    padding: 10px 0;
+}
+
+/* =================================
+   4. ĐỊNH DẠNG TÊN SẢN PHẨM
+================================= */
+
+.product-card__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
+/* Định dạng liên kết tên sản phẩm */
+.product-card__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =================================
+   5. ĐỊNH DẠNG GIÁ SẢN PHẨM
+================================= */
+
+.product-card__price-group {
+    margin: 12px 0;
+}
+
+.price-current {
+    font-size: 18px;
+    font-weight: bold;
+    color: #c0392b;
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.price-old {
+    font-size: 14px;
+    color: #999999;
+}
+
+/* =================================
+   6. ĐỊNH DẠNG NÚT THAO TÁC
+================================= */
+
+.btn-add-to-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    margin-top: 10px;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Hiệu ứng khi di chuột vào nút */
+.btn-add-to-cart:hover {
+    background-color: #555555;
+    border-color: #555555;
+}
+
+/* =================================
+   7. HIỆU ỨNG THẺ SẢN PHẨM
+================================= */
+
+.product-card:hover {
+    border-color: #c4a482;
+}
+
+/* =================================
+   8. HOVER VÀ FOCUS CHO NÚT, LIÊN KẾT
+================================= */
+
+/* Nút thêm vào giỏ hàng */
+.btn-add-to-cart {
+    background: linear-gradient(135deg, #d95783, #bd3d70);
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+
+    /* Tạo chuyển đổi mượt */
+    transition: transform 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* Hiệu ứng khi di chuột vào nút */
+.btn-add-to-cart:hover {
+    background: linear-gradient(135deg, #c94775, #a92f60);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(169, 47, 96, 0.25);
+}
+
+/* Hiệu ứng khi nhấn nút */
+.btn-add-to-cart:active {
+    transform: translateY(0);
+}
+
+/* Hiệu ứng khi di chuột vào tên sản phẩm */
+.product-card__title a:hover {
+    color: #c43d70;
+    text-decoration: underline;
+}
+
+/* Hỗ trợ người dùng điều hướng bằng bàn phím */
+.btn-add-to-cart:focus-visible,
+.product-card__title a:focus-visible,
+.product-card__media a:focus-visible {
+    outline: 3px solid #9f3159;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+

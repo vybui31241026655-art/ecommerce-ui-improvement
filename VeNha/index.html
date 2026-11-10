@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Portfolio – BÙI YẾN VY</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =================================
+       HEADER - THANH ĐIỀU HƯỚNG
+  ================================== -->
+
+  <header class="site-header">
+
+    <a href="#home" class="logo">
+      <i class="fa-solid fa-heart"></i>
+      My Portfolio
+    </a>
+
+    <nav aria-label="Điều hướng chính">
+      <a href="#home">Trang chủ</a>
+      <a href="#about">Giới thiệu</a>
+      <a href="#works">Bài tập</a>
+      <a href="#contact">Liên hệ</a>
+    </nav>
+
+  </header>
+
+
+  <!-- =================================
+       ĐỒ DÙNG VĂN PHÒNG PHẨM TRANG TRÍ
+  ================================== -->
+
+  <span class="deco ball b1"></span>
+  <span class="deco ball b2"></span>
+  <span class="deco ball b3"></span>
+  <span class="deco pen"></span>
+  <span class="deco clip"></span>
+
+
+  <!-- =================================
+       NỘI DUNG CHÍNH
+  ================================== -->
+
+  <main class="page" id="home">
+
+
+    <!-- TIÊU ĐỀ PORTFOLIO -->
+
+    <section class="hero">
+      <h1 class="headline">
+        BÀI TẬP VỀ NHÀ – TUẦN 3
+      </h1>
+    </section>
+
+
+    <!-- =================================
+         GIỚI THIỆU BẢN THÂN
+    ================================== -->
+
+    <section class="profile card" id="about"
+      aria-label="Thông tin cá nhân">
+
+      <div class="polaroid">
+
+        <img
+          id="avatar"
+          src="images/avatar.jpg"
+          alt="Ảnh đại diện của Bùi Yến Vy"
+        >
+
+      </div>
+
+
+      <div class="profile-info">
+
+        <h2>BÙI YẾN VY</h2>
+
+        <p class="role">
+          Sinh viên ngành Thương Mại Điện Tử ·
+          Đại học Kinh Tế
+        </p>
+
+        <p>
+          MSSV: 31241026655
+          &nbsp;|&nbsp;
+          Lớp: EE001
+        </p>
+
+        <p class="note">
+          Đây là nơi lưu giữ hành trình học tập
+          và các sản phẩm thực hành HTML, CSS,
+          JavaScript của mình.
+        </p>
+
+
+        <!-- MẠNG XÃ HỘI -->
+
+        <ul class="social">
+
+          <li>
+            <a
+              href="https://github.com/vybui31241026655-art/ecommerce-ui-improvement"
+              aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.facebook.com/bui.yen.vy.310353/"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.linkedin.com/feed/"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="mailto:buiyenvy206@gmail.com"
+              aria-label="Email"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================
+         BỘ LỌC BÀI TẬP
+    ================================== -->
+
+    <div class="filters"
+      role="group"
+      aria-label="Lọc bài tập">
+
+      <button class="chip active" data-filter="all">
+        Tất cả
+      </button>
+
+      <button class="chip" data-filter="HTML">
+        HTML
+      </button>
+
+      <button class="chip" data-filter="CSS">
+        CSS
+      </button>
+
+      <button class="chip" data-filter="JS">
+        JavaScript
+      </button>
+
+    </div>
+
+
+    <!-- =================================
+         DANH SÁCH BÀI TẬP
+    ================================== -->
+
+    <section
+      id="works"
+      class="grid"
+      aria-label="Danh sách bài tập"
+    >
+      <!-- Các thẻ bài tập được tạo bằng script.js -->
+    </section>
+
+
+  </main>
+
+
+  <!-- =================================
+       FOOTER - CHÂN TRANG
+  ================================== -->
+
+  <footer class="site-footer" id="contact">
+
+    <div class="foot-grid">
+
+
+      <!-- CỘT 1: GIỚI THIỆU -->
+
+      <div>
+
+        <h3>
+          <i class="fa-solid fa-heart"></i>
+          My Portfolio
+        </h3>
+
+        <p>
+          Góc nhỏ lưu giữ hành trình học tập,
+          những trải nghiệm và sản phẩm thực hành
+          của mình trong lĩnh vực Thương mại điện tử.
+        </p>
+
+      </div>
+
+
+      <!-- CỘT 2: THÔNG TIN SINH VIÊN -->
+
+      <div>
+
+        <h3>Thông tin sinh viên</h3>
+
+        <p>Họ tên: Bùi Yến Vy</p>
+
+        <p>MSSV: 31241026655</p>
+
+        <p>Lớp: EE001</p>
+
+        <p>Trường: Đại học Kinh tế TP.HCM</p>
+
+      </div>
+
+
+      <!-- CỘT 3: LIÊN KẾT -->
+
+      <div>
+
+        <h3>Kết nối với mình</h3>
+
+        <p>
+          <a href="#about">
+            Giới thiệu bản thân
+          </a>
+        </p>
+
+        <p>
+          <a href="#works">
+            Các bài tập HTML, CSS, JavaScript
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/vybui31241026655-art/ecommerce-ui-improvement"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub của mình
+          </a>
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- BẢN QUYỀN -->
+
+    <div class="copy">
+
+      <p>
+        Made with
+        <i class="fa-solid fa-heart"></i>
+        by Bùi Yến Vy
+      </p>
+
+      <p>
+        © 2026 My Student Portfolio.
+        All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+

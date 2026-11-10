@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Khoa CNTTKD - Bài 9 Font Awesome</title>
+
+<!-- Font Awesome 5 (CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: #2d2d2f;
+  }
+
+  .best-shared {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .logo {
+    margin: 0 0 30px;
+  }
+
+  h2 {
+    font-size: 56px;
+    font-weight: normal;
+    margin: 20px 0;
+  }
+
+  h2 strong {
+    font-weight: bold;
+    color: #4aa9e9;
+  }
+
+  .lead-text {
+    font-size: 20px;
+    margin: 30px 0 20px;
+  }
+
+  /* hàng icon dịch vụ */
+  .services {
+    margin: 0 0 50px;
+    font-size: 18px;
+  }
+
+  .services span {
+    display: inline-block;
+    margin: 0 20px;
+  }
+
+  .services i {
+    color: #4aa9e9;
+    margin-right: 8px;
+  }
+
+  .btn-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .btn-list li {
+    display: inline-block;
+    margin: 0 20px;
+  }
+
+  .btn-list a {
+    display: inline-block;
+    width: 238px;
+    line-height: 78px;
+    background: #2d2d2f;
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+
+  .btn-list a i {
+    margin-right: 8px;
+  }
+
+  .btn-list a:hover {
+    background: #4aa9e9;
+  }
+</style>
+</head>
+<body>
+
+<section class="best-shared">
+  <p class="logo">
+    <img style="width:200px" src="https://lh3.googleusercontent.com/d/1uuNt7NQ62x893t-0ScbJjEvf0VGQ4mku" alt="UEH Logo">
+  </p>
+
+  <!-- Đổi icon tiêu đề thành fa-cloud (Đám mây) -->
+  <h2><i class="fas fa-cloud" style="color:#4aa9e9;"></i> Best <strong>Cloud Services</strong> Company</h2>
+
+  <p class="lead-text">With this responsive landing page template, you can promote your all hosting, domain and email services.</p>
+
+  <!-- Đổi các icon dịch vụ thành: fa-shield-alt (Bảo mật), fa-rocket (Tốc độ/Tên lửa), fa-headset (Hỗ trợ) -->
+  <p class="services">
+    <span><i class="fas fa-shield-alt fa-lg"></i>Security</span>
+    <span><i class="fas fa-rocket fa-lg"></i>Fast Speed</span>
+    <span><i class="fas fa-headset fa-lg"></i>Support 24/7</span>
+  </p>
+
+  <!-- Đổi các icon trong nút thành: fa-arrow-circle-right (Khám phá) và fa-gem (Tính năng cao cấp) -->
+  <ul class="btn-list">
+    <li><a href="./"><i class="fas fa-arrow-circle-right"></i>Explore Plans</a></li>
+    <li><a href="./"><i class="fas fa-gem"></i>Pro Features</a></li>
+  </ul>
+</section>
+
+</body>
+</html>
