@@ -1,0 +1,913 @@
+
+/* =========================================
+   1. FONT & BẢNG MÀU CUTE PASTEL
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --mint: #dff3e8;
+  --mint-dark: #8fcdb2;
+  --pink: #f7c8d5;
+  --pink-dark: #d9799d;
+  --lavender: #e8dcfa;
+  --yellow: #ffedb5;
+  --peach: #ffdfca;
+  --blue: #d9ecfb;
+
+  --ink: #42564f;
+  --muted: #81918a;
+  --white: #fffdfb;
+  --border: #e8eee8;
+
+  --shadow: 0 10px 30px rgba(82, 112, 94, .12);
+  --radius: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: var(--ink);
+  background-color: #f4faf5;
+
+  /* Nền caro pastel */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(143, 205, 178, .16) 0 1px,
+      transparent 1px 45px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(143, 205, 178, .16) 0 1px,
+      transparent 1px 45px
+    );
+
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+a {
+  transition: all .25s ease;
+}
+
+/* =========================================
+   2. HEADER
+========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 14px 7%;
+  background: rgba(255, 253, 251, .94);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 2px solid #e8eee8;
+  box-shadow: 0 4px 18px rgba(82, 112, 94, .08);
+}
+
+.logo {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: #659d83;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo i {
+  color: var(--pink-dark);
+  margin-right: 7px;
+  transition: transform .5s;
+}
+
+.logo:hover i {
+  transform: rotate(360deg);
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-header nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: .9rem;
+  font-weight: 600;
+  padding: 9px 17px;
+  border-radius: 999px;
+  transition: all .25s;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+  background: var(--pink);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   3. KHU VỰC NỘI DUNG
+========================================= */
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+/* =========================================
+   4. TIÊU ĐỀ H1
+========================================= */
+
+.hero {
+  position: relative;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.headline {
+  display: inline-block;
+
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  line-height: 1.2;
+
+  /* Thu nhỏ tiêu đề */
+  font-size: clamp(1.65rem, 4.5vw, 3.35rem);
+
+  /* Không cho số 3 xuống dòng */
+  white-space: nowrap;
+
+  /* Chữ pastel hồng - tím */
+  background: linear-gradient(
+    90deg,
+    #e89bb5,
+    #b59ae5,
+    #8fc9b3,
+    #e89bb5
+  );
+
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  filter: drop-shadow(0 3px 0 rgba(255,255,255,.9));
+
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% 0;
+  }
+}
+
+.sparkle {
+  position: absolute;
+  color: #efb4c8;
+  pointer-events: none;
+  text-shadow: 0 0 10px #f8d9e4;
+  animation: twinkle 2.4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(.3) rotate(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+/* =========================================
+   5. CARD CHUNG
+========================================= */
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.9);
+}
+
+/* =========================================
+   6. THẺ GIỚI THIỆU PROFILE
+========================================= */
+
+.profile {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  gap: 32px;
+  align-items: center;
+
+  padding: 34px;
+  border-radius: 28px;
+
+  transform: rotate(-.5deg);
+
+  background: rgba(255, 253, 251, .98);
+  box-shadow: 0 15px 35px rgba(82, 112, 94, .15);
+
+  transition: transform .3s;
+}
+
+.profile:hover {
+  transform: rotate(0);
+}
+
+.profile::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 8px;
+
+  background: linear-gradient(
+    90deg,
+    #f7c8d5,
+    #e8dcfa,
+    #d9ecfb,
+    #dff3e8,
+    #ffedb5
+  );
+}
+
+/* Ảnh Polaroid */
+
+.polaroid {
+  flex: none;
+  width: 190px;
+  padding: 10px 10px 24px;
+
+  background: #fff5e8;
+  border-radius: 8px;
+
+  box-shadow: 0 7px 18px rgba(82, 112, 94, .18);
+
+  transform: rotate(3deg);
+  transition: transform .3s;
+}
+
+.polaroid:hover {
+  transform: rotate(-2deg) scale(1.05);
+}
+
+.polaroid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 3px;
+  background: var(--mint);
+}
+
+/* Thông tin cá nhân */
+
+.profile-info h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #bc83c9;
+}
+
+.role {
+  color: var(--muted);
+  margin: 3px 0 10px;
+  font-size: .95rem;
+}
+
+.note {
+  margin-top: 10px;
+  max-width: 50ch;
+  line-height: 1.7;
+  font-size: .95rem;
+}
+
+/* =========================================
+   7. SOCIAL ICONS
+========================================= */
+
+.social {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin-top: 18px;
+}
+
+.social a {
+  display: grid;
+  place-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+  background: #e6f2e9;
+  color: #659d83;
+
+  font-size: 1.15rem;
+  text-decoration: none;
+
+  transition: all .25s;
+}
+
+.social li:nth-child(1) a:hover {
+  background: #d9cdf4;
+  color: #7957a9;
+}
+
+.social li:nth-child(2) a:hover {
+  background: #d7eaff;
+  color: #1877f2;
+}
+
+.social li:nth-child(3) a:hover {
+  background: #d4e9fa;
+  color: #0a66c2;
+}
+
+.social li:nth-child(4) a:hover {
+  background: #f8d6dc;
+  color: #db687f;
+}
+
+.social a:hover,
+.social a:focus-visible {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: var(--shadow);
+}
+
+/* =========================================
+   8. BỘ LỌC BÀI TẬP
+========================================= */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 46px 0 30px;
+}
+
+.chip {
+  font-family: 'Nunito', sans-serif;
+  font-size: .95rem;
+  font-weight: 800;
+
+  padding: 9px 24px;
+  border-radius: 999px;
+
+  cursor: pointer;
+  border: 2px solid #fff;
+
+  background: rgba(255,255,255,.55);
+  color: #71917e;
+
+  transition: all .25s;
+}
+
+.chip:hover {
+  transform: translateY(-3px);
+  background: var(--lavender);
+  color: #8868b5;
+}
+
+.chip.active {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #81566a;
+  box-shadow: 0 5px 15px rgba(217, 121, 157, .2);
+}
+
+.chip:focus-visible,
+.btn:focus-visible,
+.social a:focus-visible {
+  outline: 3px solid #c5a9e8;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   9. LƯỚI BÀI TẬP
+========================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.work {
+  --r: 0deg;
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  background: var(--white);
+  border-radius: 22px;
+
+  box-shadow: var(--shadow);
+
+  transform: rotate(var(--r));
+  transition: transform .3s, box-shadow .3s;
+
+  animation: pop .6s backwards;
+}
+
+.work:nth-child(3n+1) {
+  --r: -1deg;
+}
+
+.work:nth-child(3n+2) {
+  --r: 1deg;
+  margin-top: 12px;
+}
+
+.work:nth-child(3n) {
+  --r: -.5deg;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(35px) rotate(var(--r)) scale(.9);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.work:hover {
+  transform: rotate(0) translateY(-8px) scale(1.025);
+  box-shadow: 0 18px 35px rgba(82, 112, 94, .2);
+}
+
+.work.hide {
+  display: none;
+}
+
+/* Hình đại diện bài tập */
+
+.thumb {
+  position: relative;
+  overflow: hidden;
+
+  height: 150px;
+
+  display: grid;
+  place-items: center;
+
+  font-family: 'Nunito', sans-serif;
+  font-size: 3.4rem;
+  font-weight: 900;
+
+  color: #718c80;
+
+  background-image: radial-gradient(
+    circle at 80% 15%,
+    rgba(255,255,255,.85),
+    transparent 55%
+  );
+}
+
+/* Màu pastel luân phiên */
+
+.work:nth-child(4n+1) .thumb {
+  background-color: #d9ecfb;
+}
+
+.work:nth-child(4n+2) .thumb {
+  background-color: #dff3e8;
+}
+
+.work:nth-child(4n+3) .thumb {
+  background-color: #ffdfca;
+}
+
+.work:nth-child(4n) .thumb {
+  background-color: #e8dcfa;
+}
+
+/* Hiệu ứng ánh sáng */
+
+.thumb::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255,255,255,.65),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+}
+
+.work:hover .thumb::after {
+  left: 130%;
+  transition: left .7s;
+}
+
+.thumb span {
+  display: inline-block;
+  transition: transform .3s;
+}
+
+.work:hover .thumb span {
+  transform: scale(1.25) rotate(-8deg);
+}
+
+/* Nội dung bài tập */
+
+.work-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.work-body h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #648c78;
+}
+
+.work-body p {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+/* Tags */
+
+.tags {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: .75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #f0f3ed;
+}
+
+.tag-HTML {
+  background: #ffe4d7;
+  color: #c47b5d;
+}
+
+.tag-CSS {
+  background: #e2eaff;
+  color: #718ac3;
+}
+
+.tag-JS {
+  background: #fff1c9;
+  color: #b18c38;
+}
+
+/* Nút xem bài tập */
+
+.btn {
+  margin-top: auto;
+  align-self: flex-start;
+
+  text-decoration: none;
+  font-weight: 700;
+  font-size: .9rem;
+
+  color: #fff;
+  background: linear-gradient(90deg, #c99bdc, #e5a7c2);
+
+  padding: 10px 21px;
+  border-radius: 999px;
+
+  transition: all .25s;
+}
+
+.btn:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 14px rgba(201, 155, 220, .35);
+}
+
+/* =========================================
+   10. TRANG TRÍ
+========================================= */
+
+.deco {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Bóng tròn pastel */
+
+.ball {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 35% 30%,
+    #fff,
+    #f5d9e6 65%,
+    #e8c4d4
+  );
+
+  box-shadow: 0 8px 18px rgba(82, 112, 94, .12);
+
+  animation: bob 5s ease-in-out infinite;
+}
+
+.b1 {
+  top: 120px;
+  right: 5%;
+}
+
+.b2 {
+  top: 620px;
+  left: -30px;
+  width: 75px;
+  height: 75px;
+  animation-delay: -2s;
+}
+
+.b3 {
+  top: 1100px;
+  right: -20px;
+  width: 85px;
+  height: 85px;
+  animation-delay: -3.5s;
+}
+
+@keyframes bob {
+  50% {
+    transform: translateY(-14px) rotate(8deg);
+  }
+}
+
+/* Bút trang trí */
+
+.pen {
+  top: 760px;
+  left: 2%;
+
+  width: 12px;
+  height: 190px;
+
+  background: #e9a4b9;
+  border-radius: 6px;
+
+  transform: rotate(8deg);
+  box-shadow: 0 6px 10px rgba(0,0,0,.12);
+}
+
+/* Kẹp giấy */
+
+.clip {
+  top: 120px;
+  left: 12%;
+
+  width: 34px;
+  height: 76px;
+
+  border: 5px solid #a6b9df;
+  border-radius: 18px;
+
+  transform: rotate(-20deg);
+  animation: swing 4s ease-in-out infinite;
+}
+
+@keyframes swing {
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+
+/* =========================================
+   11. FOOTER
+========================================= */
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+
+  color: #647b70;
+
+  background: linear-gradient(
+    135deg,
+    #f8dce5,
+    #e8dcfa,
+    #dff3e8
+  );
+
+  padding: 42px 24px 22px;
+
+  border-radius: 35px 35px 0 0;
+  box-shadow: 0 -6px 25px rgba(82, 112, 94, .1);
+}
+
+.foot-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.site-footer h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #9873ac;
+  margin-bottom: 12px;
+}
+
+.site-footer p {
+  margin-bottom: 8px;
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+.site-footer a {
+  color: #718d7e;
+  text-decoration: none;
+  border-bottom: 1px dashed #a8c5b2;
+}
+
+.site-footer a:hover {
+  color: #cf819e;
+  border-color: #cf819e;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 18px;
+
+  border-top: 1px dashed rgba(113, 141, 126, .4);
+
+  font-size: .85rem;
+}
+
+/* =========================================
+   12. RESPONSIVE - TABLET & MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+  .site-header {
+    padding: 12px 4%;
+  }
+
+  .site-header nav {
+    gap: 2px;
+  }
+
+  .site-header nav a {
+    padding: 8px 10px;
+    font-size: .82rem;
+  }
+
+  .page {
+    padding: 40px 20px 60px;
+  }
+
+  .profile {
+    gap: 22px;
+  }
+
+  .polaroid {
+    width: 155px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .site-header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .site-header nav a {
+    font-size: .8rem;
+    padding: 7px 10px;
+  }
+
+  .hero {
+    margin-bottom: 30px;
+  }
+
+  .headline {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+  }
+
+  .profile {
+    flex-direction: column;
+    text-align: center;
+    transform: none;
+    padding: 28px 20px;
+  }
+
+  .polaroid {
+    width: 175px;
+  }
+
+  .profile-info h2 {
+    font-size: 1.8rem;
+  }
+
+  .social {
+    justify-content: center;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+  }
+
+  .work:nth-child(n) {
+    --r: 0deg;
+    margin-top: 0;
+  }
+
+  .filters {
+    margin: 30px 0 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .headline {
+    font-size: 1.1rem;
+  }
+
+  .page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   13. HỖ TRỢ NGƯỜI DÙNG
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript Labs – BÙI YẾN VY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lab.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#home" class="logo"><i class="fa-solid fa-heart"></i> My Portfolio</a>
+    <nav aria-label="Điều hướng chính">
+      <a href="#home">Trang chủ</a>
+      <a href="#about">Thông tin</a>
+      <a href="#intro-section">Giới thiệu</a>
+      <a href="#works">Các Lab</a>
+      <a href="#knowledge">Kiến thức</a>
+      <a href="#reflection">Tự đánh giá</a>
+    </nav>
+  </header>
+
+  <span class="deco ball b1"></span>
+  <span class="deco ball b2"></span>
+  <span class="deco ball b3"></span>
+  <span class="deco pen"></span>
+  <span class="deco clip"></span>
+
+  <main class="page" id="home">
+
+    <section class="hero">
+      <h1 class="headline">JAVASCRIPT LABS</h1>
+    </section>
+
+    <!-- 3.1 THÔNG TIN CÁ NHÂN -->
+    <section class="profile card" id="about" aria-label="Thông tin cá nhân">
+      <div class="polaroid">
+        <img id="avatar" src="images/avatar.jpg" alt="Ảnh đại diện của Bùi Yến Vy">
+      </div>
+      <div class="profile-info">
+        <h2>BÙI YẾN VY</h2>
+        <p class="role">Sinh viên ngành Thương Mại Điện Tử · Đại học Kinh Tế</p>
+        <ul class="info-list">
+          <li><i class="fa-solid fa-id-card"></i> <b>Mã số sinh viên:</b> 31241026655</li>
+          <li><i class="fa-solid fa-users"></i> <b>Lớp học phần:</b> EE001</li>
+          <li><i class="fa-brands fa-github"></i> <b>GitHub:</b>
+            <a href="https://github.com/vybui31241026655-art" target="_blank" rel="noopener noreferrer">github.com/vybui31241026655-art</a></li>
+        </ul>
+        <ul class="social">
+          <li><a href="https://github.com/vybui31241026655-art" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></li>
+          <li><a href="https://www.facebook.com/bui.yen.vy.310353/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="https://www.linkedin.com/feed/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="mailto:buiyenvy206@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3.2 GIỚI THIỆU VỀ BÀI THỰC HÀNH -->
+    <section id="intro-section" class="card block">
+      <h2 class="block-title"><i class="fa-solid fa-flag"></i> Giới thiệu về bài thực hành</h2>
+      <p class="hint">TỰ VIẾT: mục tiêu khi thực hiện 3 bài Lab và vai trò của JavaScript trong phát triển ứng dụng web.</p>
+      <p id="intro">[Đoạn giới thiệu của bạn, khoảng 3–5 câu.]</p>
+    </section>
+
+    <!-- 3.3 DANH SÁCH VÀ LIÊN KẾT CÁC BÀI LAB -->
+    <section class="card block" id="lab-list">
+      <h2 class="block-title"><i class="fa-solid fa-list-check"></i> Danh sách và liên kết các bài Lab</h2>
+      <div class="table-wrap">
+        <table class="lab-table">
+          <thead>
+            <tr><th>Bài Lab</th><th>Nội dung</th><th>Truy cập</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Lab 08</b></td><td>JavaScript 1: Language Foundations</td>
+                <td><a class="btn" href="Lab08/index.html">Mở Lab 08 <i class="fa-solid fa-arrow-right"></i></a></td></tr>
+            <tr><td><b>Lab 09</b></td><td>JavaScript 2: DOM and Events</td>
+                <td><a class="btn" href="Lab09/index.html">Mở Lab 09 <i class="fa-solid fa-arrow-right"></i></a></td></tr>
+            <tr><td><b>Lab 10</b></td><td>JavaScript 3: jQuery</td>
+                <td><a class="btn" href="Lab10/index.html">Mở Lab 10 <i class="fa-solid fa-arrow-right"></i></a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="filters" role="group" aria-label="Lọc bài Lab">
+      <button class="chip active" data-filter="all">Tất cả</button>
+      <button class="chip" data-filter="JS">JavaScript</button>
+      <button class="chip" data-filter="DOM">DOM &amp; Events</button>
+      <button class="chip" data-filter="jQuery">jQuery</button>
+    </div>
+
+    <section id="works" class="grid" aria-label="Các bài Lab"></section>
+
+    <!-- 3.4 KIẾN THỨC VÀ KỸ NĂNG ĐÃ HỌC ĐƯỢC -->
+    <section id="knowledge" class="card block">
+      <h2 class="block-title"><i class="fa-solid fa-lightbulb"></i> Những kiến thức và kỹ năng đã học được</h2>
+      <p class="hint">TỰ VIẾT bằng lời của bạn, không chép lại danh sách của đề.</p>
+      <div class="know-grid">
+        <div class="know">
+          <h3>Lab 08 · Language Foundations</h3>
+          <ul>
+            <li>[Bạn học được gì về biến, hàm, String, Date, Array, Object?]</li>
+            <li>[Dùng Console kiểm tra lỗi như thế nào?]</li>
+          </ul>
+        </div>
+        <div class="know">
+          <h3>Lab 09 · DOM &amp; Events</h3>
+          <ul>
+            <li>[Chọn và thay đổi phần tử HTML ra sao?]</li>
+            <li>[Xử lý sự kiện và kiểm tra dữ liệu form thế nào?]</li>
+          </ul>
+        </div>
+        <div class="know">
+          <h3>Lab 10 · jQuery</h3>
+          <ul>
+            <li>[Selectors, events, hiệu ứng bạn đã làm gì?]</li>
+            <li>[GET request và jqXHR bạn hiểu thế nào?]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3.5 TỰ ĐÁNH GIÁ -->
+    <section id="reflection" class="card block">
+      <h2 class="block-title"><i class="fa-solid fa-pen-nib"></i> Tự đánh giá sau khi hoàn thành</h2>
+      <p class="hint">TỰ VIẾT 100–150 từ: kiến thức quan trọng đã học; Lab hữu ích hoặc khó nhất và vì sao; ứng dụng vào website TMĐT (form đăng ký, giỏ hàng, cập nhật sản phẩm...); kỹ năng cần cải thiện.</p>
+      <p id="reflection-text">[Đoạn tự đánh giá của bạn.]</p>
+      <p class="wordcount">Số từ: <strong id="wc">0</strong></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="foot-grid">
+      <div>
+        <h3><i class="fa-solid fa-heart"></i> My Portfolio</h3>
+        <p>Góc nhỏ lưu giữ hành trình học tập và sản phẩm thực hành của mình trong lĩnh vực Thương mại điện tử.</p>
+      </div>
+      <div>
+        <h3>Thông tin sinh viên</h3>
+        <p>Họ tên: Bùi Yến Vy</p>
+        <p>MSSV: 31241026655</p>
+        <p>Lớp học phần: EE001</p>
+        <p>Trường: Đại học Kinh tế TP.HCM</p>
+      </div>
+      <div>
+        <h3>Liên kết</h3>
+        <p><a href="#works">Lab 08, 09, 10</a></p>
+        <p><a href="https://github.com/vybui31241026655-art/ecommerce-ui-improvement" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
+        <p><a href="https://vybui31241026655-art.github.io/ecommerce-ui-improvement/JavaScript-Labs/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></p>
+      </div>
+    </div>
+    <div class="copy">
+      <p>Made with <i class="fa-solid fa-heart"></i> by Bùi Yến Vy</p>
+      <p>© 2026 My Student Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
