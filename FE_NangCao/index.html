@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Front-End Nâng Cao – BÙI YẾN VY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --pink: #e57bb1;
+      --purple: #b87fd6;
+      --mint: #5f8c7a;
+      --bg-grid: #f6fbf9;
+      --line-grid: #e3f0eb;
+      --text: #3d4852;
+      --muted: #6b7280;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--text);
+      background-color: var(--bg-grid);
+      background-image:
+        linear-gradient(to right, var(--line-grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--line-grid) 1px, transparent 1px);
+      background-size: 28px 28px;
+      line-height: 1.65;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      padding: 14px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--mint);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo i { color: var(--pink); }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--pink); }
+
+    /* Container & Card */
+    .container {
+      max-width: 1020px;
+      margin: 34px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 32px 36px;
+      box-shadow: 0 10px 30px rgba(184, 127, 214, 0.08);
+    }
+
+    /* Hero Banner */
+    .hero {
+      text-align: center;
+      background: linear-gradient(135deg, #fdf2f8 0%, #f3e8ff 50%, #ecfdf5 100%);
+      border: 2px solid #ffffff;
+    }
+    .badge {
+      display: inline-block;
+      background: #ffffff;
+      color: var(--purple);
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--pink), var(--purple), var(--mint));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 20px;
+      color: var(--muted);
+    }
+    .student-pills {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .pill {
+      background: #ffffff;
+      padding: 8px 16px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--mint);
+    }
+
+    /* Section Title */
+    .block-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--purple);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .block-title i { color: var(--pink); }
+
+    /* Table Danh sách bài tập */
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    thead {
+      background: linear-gradient(90deg, #f5d0fe, #e9d5ff);
+      color: #6b21a8;
+    }
+    th, td {
+      padding: 15px 18px;
+      text-align: left;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    tbody tr:hover { background-color: #faf5ff; }
+    .btn-open {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-open:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(229, 123, 177, 0.35);
+    }
+    .btn-disabled {
+      background: #e5e7eb;
+      color: #9ca3af;
+      pointer-events: none;
+    }
+
+    /* Filter Chips & Cards */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      border: none;
+      background: #f3f4f6;
+      color: var(--text);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .chip.active, .chip:hover {
+      background: #f9a8d4;
+      color: #ffffff;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .work-card {
+      border-radius: 20px;
+      padding: 24px;
+      transition: transform 0.2s;
+      border: 2px dashed rgba(95, 140, 122, 0.25);
+    }
+    .work-card:hover { transform: translateY(-4px); }
+    .work-card.c1 { background: linear-gradient(180deg, #eff6ff, #ffffff); }
+    .work-card.c2 { background: linear-gradient(180deg, #ecfdf5, #ffffff); }
+    .work-card.c3 { background: linear-gradient(180deg, #faf5ff, #ffffff); }
+    .work-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--mint);
+      opacity: 0.7;
+      margin-bottom: 8px;
+    }
+    .work-card h3 {
+      color: var(--mint);
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    .work-card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .hide { display: none; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 28px 20px 40px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--purple); font-weight: 700; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#home" class="logo"><i class="fa-solid fa-heart"></i> My Portfolio</a>
+    <nav>
+      <a href="#home">Trang chủ</a>
+      <a href="#intro">Giới thiệu</a>
+      <a href="#exercises">Danh sách bài</a>
+      <a href="#preview">Thẻ bài tập</a>
+      <a href="#contact">Thông tin</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section id="home" class="card hero">
+      <span class="badge">FRONT-END NÂNG CAO · PORTFOLIO</span>
+      <h1>BÀI TẬP THỰC HÀNH FRONT-END NÂNG CAO</h1>
+      <p>Không gian lưu trữ và trình bày các bài thực hành phát triển giao diện web hiện đại, tương tác mượt mà và tối ưu trải nghiệm người dùng.</p>
+      <div class="student-pills">
+        <span class="pill"><i class="fa-solid fa-user"></i> Bùi Yến Vy</span>
+        <span class="pill"><i class="fa-solid fa-id-card"></i> MSSV: 31241026655</span>
+        <span class="pill"><i class="fa-solid fa-graduation-cap"></i> UEH University</span>
+      </div>
+    </section>
+
+    <!-- Giới thiệu -->
+    <section id="intro" class="card">
+      <h2 class="block-title"><i class="fa-solid fa-flag"></i> Giới thiệu về học phần &amp; bài tập</h2>
+      <p>
+        Bộ bài tập thực hành Front-End Nâng Cao tập trung vào việc xây dựng bố cục web linh hoạt, xử lý sự kiện nâng cao và tổ chức giao diện theo hướng component hiện đại. Mỗi bài tập được triển khai trực tiếp trên nền tảng web và liên kết từ trang chủ này để thuận tiện cho việc kiểm tra và đánh giá kết quả trực quan.
+      </p>
+    </section>
+
+    <!-- Danh sách liên kết bài tập -->
+    <section id="exercises" class="card">
+      <h2 class="block-title"><i class="fa-solid fa-list-check"></i> Danh sách và liên kết các bài tập</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Bài tập</th>
+              <th>Nội dung thực hành</th>
+              <th>Trạng thái</th>
+              <th>Truy cập</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bài 01</strong></td>
+              <td>Thực hành Front-End Nâng Cao – Bài 1 (<code>Bai1.html</code>)</td>
+              <td>Đã hoàn thành</td>
+              <td><a href="Bai1.html" class="btn-open">Mở Bài 01 →</a></td>
+            </tr>
+            <tr>
+              <td><strong>Bài 02</strong></td>
+              <td>Đang cập nhật nội dung thực hành tiếp theo</td>
+              <td>Sắp tới</td>
+              <td><a href="#" class="btn-open btn-disabled">Chưa mở</a></td>
+            </tr>
+            <tr>
+              <td><strong>Bài 03</strong></td>
+              <td>Đang cập nhật nội dung thực hành tiếp theo</td>
+              <td>Sắp tới</td>
+              <td><a href="#" class="btn-open btn-disabled">Chưa mở</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Thẻ bài tập & Bộ lọc -->
+    <section id="preview" class="card">
+      <h2 class="block-title"><i class="fa-solid fa-layer-group"></i> Tổng quan các bài thực hành</h2>
+      <div class="filter-bar">
+        <button class="chip active" data-filter="all">Tất cả</button>
+        <button class="chip" data-filter="done">Đã hoàn thành</button>
+        <button class="chip" data-filter="upcoming">Đang cập nhật</button>
+      </div>
+      <div class="card-grid">
+        <div class="work-card c1" data-cat="done">
+          <div class="work-num">01</div>
+          <h3>Bài 01 · Bai1.html</h3>
+          <p>Xây dựng cấu trúc giao diện và xử lý hiển thị theo yêu cầu bài thực hành số 1.</p>
+          <a href="Bai1.html" class="btn-open">Xem kết quả →</a>
+        </div>
+        <div class="work-card c2" data-cat="upcoming">
+          <div class="work-num">02</div>
+          <h3>Bài 02 · Sắp cập nhật</h3>
+          <p>Không gian dự phòng cho bài thực hành tiếp theo trong chuỗi bài Front-End Nâng Cao.</p>
+          <a href="#" class="btn-open btn-disabled">Đang chờ</a>
+        </div>
+        <div class="work-card c3" data-cat="upcoming">
+          <div class="work-num">03</div>
+          <h3>Bài 03 · Sắp cập nhật</h3>
+          <p>Không gian dự phòng cho bài thực hành tổng hợp và nâng cao giao diện.</p>
+          <a href="#" class="btn-open btn-disabled">Đang chờ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p><strong>Bùi Yến Vy</strong> · MSSV: 31241026655 · Đại học Kinh tế TP.HCM (UEH)</p>
+    <p>GitHub Repository: <a href="https://github.com/vybui31241026655-art/ecommerce-ui-improvement" target="_blank">vybui31241026655-art/ecommerce-ui-improvement</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelector('.chip.active').classList.remove('active');
+        chip.classList.add('active');
+        const filter = chip.dataset.filter;
+        document.querySelectorAll('.work-card').forEach(card => {
+          const show = filter === 'all' || card.dataset.cat === filter;
+          card.classList.toggle('hide', !show);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
